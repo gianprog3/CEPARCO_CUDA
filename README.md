@@ -41,8 +41,8 @@ Baseline C Execution Time: 2.422s
 | 2^28 Elements. CUDA block size = 1024       | Kernel time | Speedup vs baseline C program |
 | -------:                                    | :------:    | :-------                      |
 | x86-64                                      | N/A         | N/A                           |
-| x86-64 SIMD XMM                             | 0.50225s    | 4.82x                         |
-| x86-64 SIMD YMM                             | 0.4995s     | 4.85x                         |
+| x86-64 SIMD XMM                             | 502.25ms    | 4.82x                         |
+| x86-64 SIMD YMM                             | 499.5ms     | 4.85x                         |
 | CUDA Unified                                |             |                               |
 | CUDA Prefetch                               |             |                               |
 | CUDA Prefetch + Page Creation               |             |                               |
