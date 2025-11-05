@@ -37,3 +37,15 @@
 # nSight Outputs:
 
 # Execution Time Table:
+| 2^28 Elements. CUDA block size = 1024       | Kernel time | Speedup vs baseline C program |
+| -------:                                    | :------:    | :-------                      |
+| x86-64                                      |             |                               |
+| x86-64 SIMD XMM                             |             |                               |
+| x86-64 SIMD YMM                             |             |                               |
+| CUDA Unified                                |             |                               |
+| CUDA Prefetch                               |             |                               |
+| CUDA Prefetch + Page Creation               |             |                               |
+| CUDA Prefetch + Page Creation + Mem Advise  |             |                               |
+| CUDA Classic MEMCPY                         |             |                               |
+| CUDA Data Init. in a CUDA Kernel            |             |                               |
+
