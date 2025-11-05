@@ -36,13 +36,13 @@ Lucas Antonio Tujan
 
 # nSight Outputs:
 
-# Execution Time Table: 2.422s
-Baseline C Execution Time: 
+# Execution Time Table: 
+Baseline C Execution Time: 2.422s
 | 2^28 Elements. CUDA block size = 1024       | Kernel time | Speedup vs baseline C program |
 | -------:                                    | :------:    | :-------                      |
-| x86-64                                      |             |                               |
-| x86-64 SIMD XMM                             |             |                               |
-| x86-64 SIMD YMM                             |             |                               |
+| x86-64                                      | N/A         | N/A                           |
+| x86-64 SIMD XMM                             | 0.50225s    | 4.82x                         |
+| x86-64 SIMD YMM                             | 0.4995s     | 4.85x                         |
 | CUDA Unified                                |             |                               |
 | CUDA Prefetch                               |             |                               |
 | CUDA Prefetch + Page Creation               |             |                               |
@@ -52,8 +52,11 @@ Baseline C Execution Time:
 
 # Analysis:
 a.)
+
 b.)
+
 c.)
+
 d.)
 
 # Problems Encountered:
