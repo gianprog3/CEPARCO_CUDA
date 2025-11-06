@@ -61,14 +61,14 @@ Baseline C Execution Time: 2.422s
 | x86-64                                      | N/A         | N/A                           |
 | x86-64 SIMD XMM                             | 502.25 ms    | 4.82x                         |
 | x86-64 SIMD YMM                             | 499.5 ms     | 4.85x                         |
-| CUDA Unified                                | 2830.55 ms            | 0.86x                              |
+| CUDA Unified                                | 3089.03 ms            | 0.78x                              |
 | CUDA Prefetch                               | 1455.26 ms            | 1.66x                              |
 | CUDA Prefetch + Page Creation               | 1498.24 ms            | 1.62x                              |
 | CUDA Prefetch + Page Creation + Mem Advise  | 617.24 ms            | 3.92x                              |
 | CUDA Classic MEMCPY                         | 627.89 ms             | 3.86x                              |
 | CUDA Data Init. in a CUDA Kernel            | 1792.66 ms            | 1.35x                              |
 
-<img width="1160" height="287" alt="analysisTable" src="https://github.com/user-attachments/assets/e3ad7c1e-202e-4455-b620-f75fb23177d6" />
+<img width="1270" height="287" alt="analysisTable" src="https://github.com/user-attachments/assets/c4b57792-4ca7-4039-968c-7bbb2c8452c2" />
 
 
 # Analysis: <br>
