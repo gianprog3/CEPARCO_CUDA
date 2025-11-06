@@ -1,4 +1,4 @@
-# CEPARCO_CUDA
+<img width="1160" height="289" alt="image" src="https://github.com/user-attachments/assets/eee42f0f-2a62-456a-ad0e-070fa537b7d8" /># CEPARCO_CUDA
 CEPARCO S11 CUDA Programming Group Project that computes the absolute sum of a large array using multiple CUDA implementations.
 
 ### Group Members:
@@ -59,14 +59,17 @@ Baseline C Execution Time: 2.422s
 | 2^28 Elements. CUDA block size = 1024       | Kernel time | Speedup vs baseline C program |
 | -------:                                    | :------:    | :-------                      |
 | x86-64                                      | N/A         | N/A                           |
-| x86-64 SIMD XMM                             | 502.25ms    | 4.82x                         |
-| x86-64 SIMD YMM                             | 499.5ms     | 4.85x                         |
-| CUDA Unified                                |             |                               |
-| CUDA Prefetch                               |             |                               |
-| CUDA Prefetch + Page Creation               |             |                               |
-| CUDA Prefetch + Page Creation + Mem Advise  |             |                               |
-| CUDA Classic MEMCPY                         |             |                               |
-| CUDA Data Init. in a CUDA Kernel            |             |                               |
+| x86-64 SIMD XMM                             | 502.25 ms    | 4.82x                         |
+| x86-64 SIMD YMM                             | 499.5 ms     | 4.85x                         |
+| CUDA Unified                                | 2830.55 ms            | 0.86x                              |
+| CUDA Prefetch                               | 1455.26 ms            | 1.66x                              |
+| CUDA Prefetch + Page Creation               | 1498.24 ms            | 1.62x                              |
+| CUDA Prefetch + Page Creation + Mem Advise  | 617.24 ms            | 3.92x                              |
+| CUDA Classic MEMCPY                         | 627.89 ms             | 3.86x                              |
+| CUDA Data Init. in a CUDA Kernel            | 1792.66 ms            | 1.35x                              |
+
+<img width="1160" height="287" alt="analysisTable" src="https://github.com/user-attachments/assets/e3ad7c1e-202e-4455-b620-f75fb23177d6" />
+
 
 # Analysis: <br>
 a.) ##What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant? 
