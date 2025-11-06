@@ -36,21 +36,22 @@ Lucas Antonio Tujan <br>
 
 # nSight Outputs:
 ### (2) Grid-Stride Loop; no prefetch, no page creation, no mem advise
-
+<img width="1918" height="1137" alt="nsight_asm1" src="https://github.com/user-attachments/assets/db365f53-fbd6-4770-9c8d-bab9affb0bf7" />
 
 ### (3) Grid-Stride Loop; with prefetch, no page creation, no mem advise
-
+<img width="1918" height="1137" alt="nsight_asm2" src="https://github.com/user-attachments/assets/219ee7b3-4e61-4f73-a60e-be083d380e09" />
 
 ### (4) Grid-Stride Loop; with prefetch; with page creation; no mem advise
-
+<img width="1918" height="1137" alt="nsight_asm3" src="https://github.com/user-attachments/assets/73a970f6-24ac-4497-9ec0-9ff789235485" />
 
 ### (5) Grid-Stride Loop; with prefetch; with page creation; with mem advise
-
+<img width="1918" height="1140" alt="nsight_asm4" src="https://github.com/user-attachments/assets/aaecccd5-e761-4f3f-8c38-15a3c544da01" />
 
 ### (6) Classic MemCopy (no Unified Memory)
-
+<img width="1918" height="1137" alt="nsight_asm5" src="https://github.com/user-attachments/assets/cde8b181-a808-42c1-bf89-4cd2cb786911" />
 
 ### (7) Grid-Stride Loop with Prefetch and GPU Data Initialization
+<img width="1918" height="1140" alt="nsight_asm6" src="https://github.com/user-attachments/assets/7942d7d2-ec98-4b74-9431-7008d1c85630" />
 
 
 # Execution Time Table: 
