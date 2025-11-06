@@ -11,6 +11,7 @@ Lucas Antonio Tujan <br>
 <img width="1296" height="135" alt="image" src="https://github.com/user-attachments/assets/1085c4c6-294e-44aa-8ad7-d19f48795fa8" />
 
 ### AI Usage Declaration:
+No AI was used in the making of this project.
 
 # Program Outputs:
 ### (1) C Program
