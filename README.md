@@ -2,10 +2,10 @@
 CEPARCO S11 CUDA Programming Group Project that computes the absolute sum of a large array using multiple CUDA implementations.
 
 ### Group Members:
-Gian Martin Carlos
-Kenzo Mikael De Vera
-Hans Christian Mascardo
-Lucas Antonio Tujan
+Gian Martin Carlos <br>
+Kenzo Mikael De Vera <br>
+Hans Christian Mascardo <br>
+Lucas Antonio Tujan <br>
 
 ### Project Specification:
 <img width="1296" height="135" alt="image" src="https://github.com/user-attachments/assets/1085c4c6-294e-44aa-8ad7-d19f48795fa8" />
@@ -35,6 +35,23 @@ Lucas Antonio Tujan
 <img width="885" height="649" alt="image" src="https://github.com/user-attachments/assets/b2340c2e-4a53-489f-9b12-edfe585436dc" />
 
 # nSight Outputs:
+### (2) Grid-Stride Loop; no prefetch, no page creation, no mem advise
+
+
+### (3) Grid-Stride Loop; with prefetch, no page creation, no mem advise
+
+
+### (4) Grid-Stride Loop; with prefetch; with page creation; no mem advise
+
+
+### (5) Grid-Stride Loop; with prefetch; with page creation; with mem advise
+
+
+### (6) Classic MemCopy (no Unified Memory)
+
+
+### (7) Grid-Stride Loop with Prefetch and GPU Data Initialization
+
 
 # Execution Time Table: 
 Baseline C Execution Time: 2.422s
