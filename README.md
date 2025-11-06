@@ -69,12 +69,12 @@ Baseline C Execution Time: 2.422s
 | CUDA Data Init. in a CUDA Kernel            |             |                               |
 
 # Analysis: <br>
-a.) ##What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
-- 
+a.) ##What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant? 
+
 b.) ##How does block size affect execution time (observing various elements and using max blocks)?  Which block size will you recommend?
-- The block size determines how many threads can run in parallel on the block. NVIDIA GPUs make use of warps, which executes threads in groups of 32. With this, the block size is recommended to be a multiple of 32 to maximize the warp groups. If the block size is not a multiple of 32, the excess threads would still be on a new warp group, which would waste unallocated space. For example, if we use a block size of 40, there will be 2 groups, 1 with 32 threads and another using only 8 out of the 32 possible threads.<br>
+The block size determines how many threads can run in parallel on the block. NVIDIA GPUs make use of warps, which executes threads in groups of 32. With this, the block size is recommended to be a multiple of 32 to maximize the warp groups. If the block size is not a multiple of 32, the excess threads would still be on a new warp group, which would waste unallocated space. For example, if we use a block size of 40, there will be 2 groups, 1 with 32 threads and another using only 8 out of the 32 possible threads.<br>
 c.) ##Is prefetching always recommended, or should CUDA manage memory?  Give some use cases in which one is better than the other.
-- If the programmer is looking to boost performance when using unified memory, then prefetching is always recommended. In comparison to normal unified memory or CUDA's cudaMallocManaged(), prefetching moves the needed pages from the unified memory to the GPU's frames before the kernel runs. This action stops page faulting which would then reduce the time the GPU stalls from retrieving the pages. A use case for the programmer to use normal unified memory is when the program does not need to have optimal performance. An example of this would be during the project's prototype stage, where the programmer could care more about convenience rather than performance.<br>
+If the programmer is looking to boost performance when using unified memory, then prefetching is always recommended. In comparison to normal unified memory or CUDA's cudaMallocManaged(), prefetching moves the needed pages from the unified memory to the GPU's frames before the kernel runs. This action stops page faulting which would then reduce the time the GPU stalls from retrieving the pages. A use case for the programmer to use normal unified memory is when the program does not need to have optimal performance. An example of this would be during the project's prototype stage, where the programmer could care more about convenience rather than performance.<br>
 d.)
 
 
