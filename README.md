@@ -1,4 +1,4 @@
-<img width="1160" height="289" alt="image" src="https://github.com/user-attachments/assets/eee42f0f-2a62-456a-ad0e-070fa537b7d8" /># CEPARCO_CUDA
+# CEPARCO_CUDA
 CEPARCO S11 CUDA Programming Group Project that computes the absolute sum of a large array using multiple CUDA implementations.
 
 ### Group Members:
