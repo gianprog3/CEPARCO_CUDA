@@ -69,13 +69,14 @@ Baseline C Execution Time: 2.422s
 | CUDA Data Init. in a CUDA Kernel            |             |                               |
 
 # Analysis:
-a.)
-
-b.)
-
-c.)
-
+a.) ##What overheads are included in the GPU execution time (up to the point where the data is transferred back to the CPU for error checking)? Is it different for each CUDA variant?
+- 
+b.) ##How does block size affect execution time (observing various elements and using max blocks)?  Which block size will you recommend?
+- The block size determines how many threads can run in parallel on the block. NVIDIA GPUs make use of warps, which executes threads in groups of 32. With this, the block size is recommended to be a multiple of 32 to maximize the warp groups. If the block size is not a multiple of 32, the excess threads would still be on a new warp group, which would waste unallocated space. For example, if we use a block size of 40, there will be 2 groups, 1 with 32 threads and another using only 8 out of the 32 possible threads.
+c.) ##Is prefetching always recommended, or should CUDA manage memory?  Give some use cases in which one is better than the other.
+- If the programmer is looking to boost performance when using unified memory, then prefetching is always recommended. In comparison to normal unified memory or CUDA's cudaMallocManaged(), prefetching moves the needed pages from the unified memory to the GPU's frames before the kernel runs. This action stops page faulting which would then reduce the time the GPU stalls from retrieving the pages. A use case for the programmer to use normal unified memory is when the program does not need to have optimal performance. An example of this would be during the project's prototype stage, where the programmer could care more about convenience rather than performance.
 d.)
+
 
 # Problems Encountered:
 The absolute sum function to be implemented in CUDA was not possible by using the same code as C, and would write nothing to the asum variable. This occurs due to parallelism, where multiple threads accessing the same variable causes errors in the resulting output. It is unlike the CUDA square program which updates individual elements on an array, hence no "race condition" is ever met across threads. A solution that was implemented was to make use of the atomicAdd() function. This function simply acts as the "var += val" equivalent in C, or in other words, a summation function. 
@@ -86,3 +87,4 @@ Small differences in the output from the error checking was performed regardless
 
 Lastly, the use of the atomicAdd() functions were not supported unless the compiler was told to use CUDA compute compatibility 6.0, which was done by appending "-arch=sm_60" in the cell for compiling the CUDA programs.
 # SIMD vs SIMT:
+While both SIMD and SIMT exhibited a boost in performance compared to our C program, for our use case, SIMD was the better choice. For our kernel, getting the absolute value of every element in the vector would be faster with the use of SIMT, since we could get the value through multiple threads running at the same time. SIMD on the otherhand would only be able to get 16 data values at most and would need additional instructions to cover the entire vector. SIMD's strength comes in the summation aspect since SIMT's parallelism would need synchronization steps to combine each partial sum in the threads, while SIMD can perform the sum directly in registers. Another flaw of SIMT in our kernel would be the passing of data from CPU to GPU and vice versa. Since our kernel wouldn't require complex arithmetic operations, the data transfer times would overpower the time it takes for the SIMT to perform the arithmetic operations. Compared to SIMD, the data is already in the CPU and is readily accessible by the kernel. 
